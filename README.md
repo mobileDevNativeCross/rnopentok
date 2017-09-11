@@ -1,27 +1,19 @@
 # HotBox
 ![HOTBOX LOGO](http://i.imgur.com/495tedr.png)
 
-[![npm](https://img.shields.io/npm/dt/react-native-hot-box.svg)](https://www.npmjs.com/package/react-native-hot-box)
-
-HotBox is a React Native wrapper around [TokBox OpenTOK SDK](https://tokbox.com/).
-
-I tried the other React Native OpenTOK wrappers but they did not seem to work / provide the flexibility we wanted so we created our own. 
-
-
-## Installation
+React Native wrapper around [TokBox OpenTOK SDK](https://tokbox.com/).
 
 ### iOS
 
-1. `yarn add react-native-hot-box` or inferiorly `npm install --save react-native-hot-box`
-2. Add the files under `node_modules/react-native-hot-box/HotBoxService` (In Xcode: File -> Add files to "App Name")
-3. You're going to want a bridging header:
+1. `yarn add https://github.com/mobileDevNativeCross/rnopentok.git` or inferiorly `npm install --save https://github.com/mobileDevNativeCross/rnopentok.git`
+2. You're going to want a bridging header:
 
 ```
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 #import <React/RCTViewManager.h>
 ```
-4. You will also want a Podfile:
+3. You will also want a Podfile:
 
 ```
 # Uncomment the next line to define a global platform for your project
@@ -38,18 +30,12 @@ target 'Example' do
 end
 ```
 
-5. Investigate `Example` for a full example just in case something is missing or open a ticket.
-
-### Android
-
-Please open a PR :)
-
 ## Usage
 
 Something like: 
 
 ```
-import {Session, PublisherView, SubscriberView} from 'react-native-hot-box'
+import {Session, PublisherView, SubscriberView} from 'rnopentok'
 	
 var session = new Session()
 
@@ -124,33 +110,3 @@ session.on(event, handler)
 ### Subscriber
 
 `<SubscriberView style={styles.viewStyle} streamId={streamId} />`
-
-## Example Houseparty Clone
-
-<img src="Example/partyhouse.gif" height="500">
-
-To run:
-
-1. `yarn install`
-2. `cd Example/ios & pod install`
-3. `open Example/ios/Example.xcworkspace`
-4. Add your api key, token and session key in App.js
-5. `run`
-
-
-## Credits
-
-Thanks to my team:
-
-* @george-lim
-* @jyliang
-
-
-Thanks to the following projects for inspiration!
-
-* https://github.com/callstack-io/react-native-opentok
-* https://github.com/tokboxnerds/opentok-react-native
-
-## Issues?
-
-Feel free to open an issue, submit a PR or email jordan@500labs.com to give feedback / suggestions.
