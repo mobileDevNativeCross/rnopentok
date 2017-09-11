@@ -1,0 +1,9 @@
+{
+    "name": "rnopentok",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "react-native start"
+    }
+  }
